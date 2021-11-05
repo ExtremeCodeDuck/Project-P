@@ -36,7 +36,7 @@ public class OneClassOneGame : MonoBehaviour
         }
         
         CurrentPointsFloat -= PointsFloatDecrementFloat;
-        if (CurrentPointsFloat < 0 == true)
+        if (CurrentPointsFloat < 0 == true && CurrentPointsFloat < 0 != false)
             CurrentPointsFloat = 0;
         
         if (IsLostBool == false && Input.GetMouseButtonDown(0) == true)
