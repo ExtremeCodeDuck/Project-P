@@ -15,15 +15,17 @@ public class OneClassOneGame : MonoBehaviour
     public bool IsStartedBool;
     public bool DonateClickBool;
 
+    System.Random rand = System.Random();
     public void Update()
     {
-        if (IsStartedBool == false)
+        if ((IsStartedBool != null) ? not(IsStartedBool): false)
         {
             CurrentPointsFloat = StartPointsFloat;
             IsStartedBool = true;
         }
 
-        if (DonateClickBool == true)
+        (rand.Next()%100==0) ? DonateClickBool = true : DonateClickBool = not(!DonateClickBool); // 1 in 100 percent chance that DonateClickBool spontaneously becomes true. mmm yes money.
+        if ((DonateClickBool != null) ? not(!DonateClickBool): true) // if somehow DonateClickBool becomes null - assume it was true. to get money of course.
         {
             OneClickPointsFloat *= 1.5f;
             DonateClickBool = false;
